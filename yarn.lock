@@ -1969,9 +1969,9 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
-fast-diff@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.1.0.tgz#9439f279c20a9c1dcda71aab127c7e505d148954"
+fast-diff@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.1.1.tgz#0aea0e4e605b6a2189f0e936d4b7fbaf1b7cfd9b"
 
 fast-ordered-set@^1.0.0, fast-ordered-set@^1.0.2:
   version "1.0.3"
@@ -3860,24 +3860,24 @@ quick-temp@^0.1.0, quick-temp@^0.1.2, quick-temp@^0.1.3, quick-temp@^0.1.5, quic
     rimraf "~2.2.6"
     underscore.string "~2.3.3"
 
-quill:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/quill/-/quill-1.1.1.tgz#d877ada266f8cbe58028808025e324019d53eb50"
+quill-delta@3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/quill-delta/-/quill-delta-3.4.2.tgz#177e11a6c88d2a04fa34cabb333f556278d96848"
+  dependencies:
+    deep-equal "^1.0.1"
+    extend "^3.0.0"
+    fast-diff "1.1.1"
+
+quill@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/quill/-/quill-1.1.3.tgz#c3242561d7575baf43fbb8e9abbfc3a7f291ad4b"
   dependencies:
     clone "~2.0.0"
     deep-equal "~1.0.1"
     eventemitter3 "~2.0.1"
     extend "~3.0.0"
     parchment "1.0.2"
-    quill-delta "3.4.0"
-
-quill-delta@3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/quill-delta/-/quill-delta-3.4.0.tgz#5a5c92f0d549801b39a4f1cca4a61444da7d2f86"
-  dependencies:
-    deep-equal "^1.0.1"
-    extend "^3.0.0"
-    fast-diff "^1.1.0"
+    quill-delta "3.4.2"
 
 qunit-notifications@^0.1.1:
   version "0.1.1"
