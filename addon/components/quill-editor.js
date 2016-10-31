@@ -3,14 +3,18 @@
 import Ember from "ember";
 import layout from "../templates/components/quill-editor";
 
-const { computed, run, get, set } = Ember;
+const { Component, computed, get, set } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   editor: null,
 
   options: computed(function() {
-    return {theme: "snow"}
+    return {theme: "snow"};
+  }),
+
+  safeValue: computed("value", function() {
+    return Ember.String.htmlSafe(get(this, "value"));
   }),
 
   didInsertElement() {
