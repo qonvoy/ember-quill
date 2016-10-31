@@ -1,27 +1,51 @@
-# Ember-quill
+# Ember-Quill
 
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-quill`
-* `npm install`
-* `bower install`
+* `ember install ember-quill`
 
-## Running
+## Component example
+```javascript
+import Ember from 'ember';
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+const { Component, inject, computed, get, run } = Ember;
 
-## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+export default Component.extend({
+  session: inject.service(),
+  placeholder: "",
 
-## Building
+  options: {
+    theme: "snow",
+    modules: {
+      toolbar: [
+        [{header: [2, 3, 4, false]}],
+        ["bold", "italic", "underline", "strike"],
+        [{"color": []}],
+        [{"list": "ordered"}, {"list": "bullet"}],
+        [{"indent": "-1"}, {"indent": "+1"}],
+        [{"align": []}],
+        ["link"],
+        ["clean"]
+      ]
+    }
+  },
 
-* `ember build`
+  actions: {
+    updateText(editor) {
+      this.attrs.update(editor.root.innerHTML);
+    }
+  }
+});
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+```
+
+## Template example
+```hbs
+{{quill-editor value=value options=options textChange=(action "updateText")}}
+```
+
+## License
+The `ember-quill` is under the Apache 2.0 license
