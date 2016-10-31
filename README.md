@@ -10,10 +10,7 @@ This README outlines the details of collaborating on this Ember addon.
 ```javascript
 import Ember from 'ember';
 
-const { Component, inject, computed, get, run } = Ember;
-
-
-export default Component.extend({
+export default Ember.Component.extend({
   options: {
     theme: "snow",
     modules: {
