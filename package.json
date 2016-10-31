@@ -43,7 +43,10 @@
     "loader.js": "^4.0.10"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "wysiwyg",
+    "rich text",
+    "editor"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.7",
