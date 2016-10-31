@@ -14,9 +14,6 @@ const { Component, inject, computed, get, run } = Ember;
 
 
 export default Component.extend({
-  session: inject.service(),
-  placeholder: "",
-
   options: {
     theme: "snow",
     modules: {
