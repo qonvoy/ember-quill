@@ -13,7 +13,7 @@ export default Component.extend({
     return {theme: "snow"};
   }),
 
-  safeValue: computed("value", function() {
+  safeValue: computed(function() {
     return Ember.String.htmlSafe(get(this, "value"));
   }),
 
