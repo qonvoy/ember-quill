@@ -5,20 +5,9 @@ moduleForComponent('quill-editor', 'Integration | Component | quill editor', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it renders quill container and toolbar', function(assert) {
   this.render(hbs`{{quill-editor}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#quill-editor}}
-      template block text
-    {{/quill-editor}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().find('.ql-toolbar').length, 'Quill container was inserted');
+  assert.ok(this.$().find('.ql-container').length, 'Quill toolbar was inserted');
 });
