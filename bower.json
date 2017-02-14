@@ -1,8 +1,4 @@
 {
   "name": "ember-quill",
-  "dependencies": {
-    "ember": "~2.9.0",
-    "ember-cli-shims": "0.1.3"
-  },
-  "version": "0.0.1"
+  "dependencies": {}
 }
