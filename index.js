@@ -1,20 +1,26 @@
 /* jshint node: true */
-"use strict";
+'use strict';
 
 module.exports = {
-  name: "ember-quill",
+  name: 'ember-quill',
   options: {
     nodeAssets: {
-      quill: {
-        import: [
-          "dist/quill.min.js",
-          "dist/quill.min.js.map",
-          "dist/quill.snow.css"
-        ]
-      }
-    }
+      quill: function() {
+        if (!process.env.EMBER_CLI_FASTBOOT) {
+          return {
+            import: [
+              'dist/quill.min.js',
+              'dist/quill.min.js.map',
+              'dist/quill.snow.css',
+            ],
+          };
+        } else {
+          return {};
+        }
+      },
+    },
   },
   isDevelopingAddon: function() {
     return true;
-  }
+  },
 };
