@@ -4383,7 +4383,7 @@ quill-delta@3.5.0:
     extend "^3.0.0"
     fast-diff "1.1.1"
 
-quill@^1.2.2:
+quill@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/quill/-/quill-1.2.4.tgz#2a822fb10f4346e63845b37637ee3d6bf0d20b65"
   dependencies:
