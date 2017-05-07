@@ -1,6 +1,6 @@
 {
   "name": "ember-quill",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Ember addon for the Quill rich text editor",
   "directories": {
     "doc": "doc",
@@ -12,7 +12,7 @@
     "test": "ember try:each"
   },
   "repository": {
-    "url": "https://www.github.com/noppo-pro/ember-quill",
+    "url": "https://gitlab.com/noppo/gevent-websocket",
     "type": "git"
   },
   "engines": {
