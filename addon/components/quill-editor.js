@@ -3,7 +3,7 @@
 import Ember from "ember";
 import layout from "../templates/components/quill-editor";
 
-const { Component, computed, get, set } = Ember;
+const { Component, computed, getOwner, get, set } = Ember;
 
 export default Component.extend({
   layout,
@@ -17,14 +17,16 @@ export default Component.extend({
     return Ember.String.htmlSafe(get(this, "value"));
   }),
 
-  // didUpdateAttrs() {
-  //   this._super(...arguments);
-  //   // get(this, "editor").clipboard.dangerouslyPasteHTML()
-  // }
+  fastboot: computed(function() {
+    return getOwner(this).lookup("service:fastboot");
+  }),
 
   didInsertElement() {
+    // Don't instantiate Quill if fastboot is detected
+    if (this.get("fastboot.isFastBoot"))
+      return;
+
     const self = this;
-    const html = this.$().get(0);
     const editor = new Quill(this.$().get(0), get(this, "options"));
 
     editor.on("text-change", (delta, oldDelta, source) => {
