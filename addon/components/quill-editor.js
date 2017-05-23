@@ -23,9 +23,10 @@ export default Component.extend({
 
   didInsertElement() {
     // Don't instantiate Quill if fastboot is detected
-    if (this.get("fastboot.isFastBoot"))
+    if (this.get("fastboot.isFastBoot")) {
       return;
-
+    }
+    
     const self = this;
     const editor = new Quill(this.$().get(0), get(this, "options"));
 
