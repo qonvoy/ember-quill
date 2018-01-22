@@ -1,20 +1,21 @@
-/* global Quill */
+import Quill from "quill";
+import Component from "@ember/component";
+import { computed } from "@ember/object";
+import { getOwner } from "@ember/application";
+import { htmlSafe } from "@ember/string";
 
-import Ember from "ember";
 import layout from "../templates/components/quill-editor";
-
-const { Component, computed, getOwner, get, set } = Ember;
 
 export default Component.extend({
   layout,
   editor: null,
 
   options: computed(function() {
-    return {theme: "snow"};
+    return { theme: "snow" };
   }),
 
   safeValue: computed(function() {
-    return Ember.String.htmlSafe(get(this, "value"));
+    return htmlSafe(this.get("value"));
   }),
 
   fastboot: computed(function() {
@@ -29,15 +30,27 @@ export default Component.extend({
       return;
     }
 
-    const editor = new Quill(this.element, get(this, "options"));
+    const editor = new Quill(this.element, this.get("options"));
 
     editor.on("text-change", (delta, oldDelta, source) => {
-      self.sendAction("textChange", get(self, "editor"), delta, oldDelta, source);
+      self.sendAction(
+        "textChange",
+        this.get("editor"),
+        delta,
+        oldDelta,
+        source
+      );
     });
     editor.on("selection-change", (delta, oldDelta, source) => {
-      self.sendAction("selectionChange", get(self, "editor"), delta, oldDelta, source);
+      self.sendAction(
+        "selectionChange",
+        this.get("editor"),
+        delta,
+        oldDelta,
+        source
+      );
     });
 
-    set(self, "editor", editor);
+    this.set("editor", editor);
   }
 });
