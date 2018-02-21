@@ -23,8 +23,6 @@ export default Component.extend({
   }),
 
   didInsertElement() {
-    const self = this;
-
     // Don't instantiate Quill if fastboot is detected
     if (this.get("fastboot.isFastBoot")) {
       return;
@@ -33,18 +31,18 @@ export default Component.extend({
     const editor = new Quill(this.element, this.get("options"));
 
     editor.on("text-change", (delta, oldDelta, source) => {
-      self.sendAction(
+      this.sendAction(
         "textChange",
-        this.get("editor"),
+        editor,
         delta,
         oldDelta,
         source
       );
     });
     editor.on("selection-change", (delta, oldDelta, source) => {
-      self.sendAction(
+      this.sendAction(
         "selectionChange",
-        this.get("editor"),
+        editor,
         delta,
         oldDelta,
         source
