@@ -1,8 +1,9 @@
 # Ember-Quill
+==============================================================================
 
-This README outlines the details of collaborating on this Ember addon.
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 * `ember install ember-quill`
 
