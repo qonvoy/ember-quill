@@ -18,7 +18,7 @@ export default Component.extend({
     return { theme: "snow" };
   }),
 
-  safeValue: computed('value', function() {
+  safeValue: computed("value", function() {
     return htmlSafe(this.get("value"));
   }),
 
@@ -35,7 +35,7 @@ export default Component.extend({
     const editor = new Quill(this.element, this.get("options"));
 
     editor.on("text-change", (delta, oldDelta, source) => {
-      this.get('textChange')(
+      this.get("textChange")(
         this.get("editor"),
         delta,
         oldDelta,
@@ -44,7 +44,7 @@ export default Component.extend({
     });
 
     editor.on("selection-change", (delta, oldDelta, source) => {
-      this.get('selectionChange')(
+      this.get("selectionChange")(
         this.get("editor"),
         delta,
         oldDelta,
