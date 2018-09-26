@@ -7,10 +7,5 @@ module.exports = function(defaults) {
     // Add options here
   });
 
-  app.import("node_modules/quill/dist/quill.js");
-  app.import("node_modules/quill/dist/quill.min.js.map");
-  app.import("node_modules/quill/dist/quill.snow.css");
-  app.import("vendor/shims/quill.js");
-
   return app.toTree();
 };
