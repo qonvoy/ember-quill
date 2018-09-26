@@ -1,12 +1,8 @@
 # Ember-Quill
-==============================================================================
 
 [![build status](https://gitlab.com/noppo/ember-quill/badges/master/build.svg)](https://gitlab.com/noppo/ember-quill/commits/master)
 
-
-
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 * `ember install ember-quill`
 
